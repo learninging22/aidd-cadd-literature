@@ -1,0 +1,132 @@
+name: AIDD/CADD 文献每日更新
+
+on:
+  schedule:
+    - cron: '30 1 * * *'          # UTC 01:30 = 北京时间 09:30
+  workflow_dispatch:              # 允许在网页手动点一次
+    inputs:
+      days:
+        description: '抓取最近几天（首次部署建议 90）'
+        required: false
+        default: '3'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: aidd-literature-deploy
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 准备 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 文献库不进 git(避免仓库膨胀), 靠 Actions 缓存跨次运行保留。
+      # 缓存被 GitHub 回收时会自动退化成 90 天冷启动, 不会静默丢数据。
+      - name: 恢复历史文献库
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/papers.json
+            data/seen.json
+          key: aidd-data-${{ github.run_id }}
+          restore-keys: |
+            aidd-data-
+
+      - name: 决定抓取窗口
+        id: win
+        run: |
+          if [ -n "${{ github.event.inputs.days }}" ]; then
+            echo "days=${{ github.event.inputs.days }}" >> $GITHUB_OUTPUT
+          elif [ -f data/papers.json ]; then
+            echo "days=3" >> $GITHUB_OUTPUT
+            echo "已有历史库, 增量抓取 3 天"
+          else
+            echo "days=90" >> $GITHUB_OUTPUT
+            echo "无历史库, 冷启动回填 90 天"
+          fi
+
+      - name: 抓取文献并生成看板
+        env:
+          PYTHONIOENCODING: utf-8
+          TZ: Asia/Shanghai
+        run: python fetch_lit.py --days ${{ steps.win.outputs.days }}
+
+      - name: 保存本次结果摘要
+        run: |
+          echo "### 本次运行" >> $GITHUB_STEP_SUMMARY
+          python - <<'PY' >> $GITHUB_STEP_SUMMARY
+          import json, os, collections
+          p = "data/papers.json"
+          if not os.path.exists(p):
+              print("未生成文献库"); raise SystemExit
+          d = json.load(open(p, encoding="utf-8"))
+          c = collections.Counter(x["journal_disp"] for x in d)
+          meta = json.load(open("data/journal_meta.json", encoding="utf-8"))
+          miss = [k for k in meta if c.get(k, 0) == 0]
+          print("- 库内累计 **%d** 篇，覆盖 **%d/%d** 种期刊" % (len(d), len(c), len(meta)))
+          if miss:
+              print("- 未取到文献的期刊: %s" % ", ".join(miss))
+          else:
+              print("- 全部期刊均有文献")
+          print("")
+          print("| 期刊 | 篇数 |")
+          print("|---|---|")
+          for k, v in c.most_common(12):
+              print("| %s | %d |" % (k, v))
+          PY
+
+      - name: 提交 Markdown 日报
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "日报无变化，跳过提交"
+          else
+            git commit -m "chore: 文献日报 $(date -u +%F)"
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传看板
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard
+
+      - name: 发布到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # 邮件为可选项: 未配置 EMAIL_TO 时整步跳过, 不会失败
+      - name: 邮件推送日报
+        if: env.EMAIL_TO != ''
+        env:
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: AIDD/CADD 文献日报
+          to: ${{ secrets.EMAIL_TO }}
+          from: ${{ secrets.MAIL_USERNAME }}
+          body: file://outbox/email_digest.md
+          content_type: text/plain

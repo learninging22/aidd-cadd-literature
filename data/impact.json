@@ -1,0 +1,607 @@
+{
+ "J Med Chem": {
+  "if_latest": 7.3,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 7.3,
+   "2024": 6.8,
+   "2023": 6.8,
+   "2021": 8.039,
+   "2020": 7.446,
+   "2019": 6.205,
+   "2018": 6.054,
+   "2017": 6.253,
+   "2016": 6.259,
+   "2015": 5.589,
+   "2014": 5.447,
+   "2013": 5.48,
+   "2012": 5.614
+  },
+  "source": "https://www.bioxbio.com/journal/J-MED-CHEM"
+ },
+ "J Chem Inf Model": {
+  "if_latest": 6.4,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 6.4,
+   "2024": 5.3,
+   "2023": 5.6,
+   "2022": 5.6,
+   "2021": 6.162,
+   "2020": 4.956,
+   "2019": 4.549,
+   "2018": 3.966,
+   "2017": 3.804,
+   "2016": 3.76,
+   "2015": 3.657,
+   "2014": 3.738,
+   "2013": 4.068,
+   "2012": 4.304
+  },
+  "source": "https://www.bioxbio.com/journal/J-CHEM-INF-MODEL"
+ },
+ "Eur J Med Chem": {
+  "if_latest": 6.7,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 6.7,
+   "2024": 5.9,
+   "2023": 6.0,
+   "2022": 6.7,
+   "2021": 7.088,
+   "2020": 6.514,
+   "2019": 5.572,
+   "2018": 4.833,
+   "2017": 4.816,
+   "2016": 4.519,
+   "2015": 3.902,
+   "2014": 3.447,
+   "2013": 3.432,
+   "2012": 3.499
+  },
+  "source": "https://www.bioxbio.com/journal/EUR-J-MED-CHEM"
+ },
+ "J Chem Theory Comput": {
+  "if_latest": 5.8,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 5.8,
+   "2024": 5.5,
+   "2023": 5.7,
+   "2022": 5.5,
+   "2021": 6.578,
+   "2020": 6.006,
+   "2019": 5.011,
+   "2018": 5.313,
+   "2017": 5.399,
+   "2016": 5.245,
+   "2015": 5.301,
+   "2014": 5.498,
+   "2013": 5.31,
+   "2012": 5.389
+  },
+  "source": "https://www.bioxbio.com/journal/J-CHEM-THEORY-COMPUT"
+ },
+ "J Comput Aided Mol Des": {
+  "if_latest": 3.0,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 3.0,
+   "2024": 3.1,
+   "2023": 3.0,
+   "2022": 3.5,
+   "2021": 4.179,
+   "2020": 3.686,
+   "2019": 2.546,
+   "2018": 3.25,
+   "2017": 2.356,
+   "2016": 3.028,
+   "2015": 3.199,
+   "2014": 2.99,
+   "2013": 2.782,
+   "2012": 3.172
+  },
+  "source": "https://www.bioxbio.com/journal/J-COMPUT-AID-MOL-DES"
+ },
+ "J Cheminform": {
+  "if_latest": 7.9,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 7.9,
+   "2024": 5.7,
+   "2023": 7.1,
+   "2022": 8.6,
+   "2021": 8.489,
+   "2020": 5.514,
+   "2019": 5.318,
+   "2018": 4.154,
+   "2017": 3.893,
+   "2016": 4.22,
+   "2015": 3.949,
+   "2014": 4.547,
+   "2013": 4.54,
+   "2012": 3.59
+  },
+  "source": "https://www.bioxbio.com/journal/J-CHEMINFORMATICS"
+ },
+ "Mol Inform": {
+  "if_latest": 3.1,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 3.1,
+   "2024": 3.1,
+   "2023": 2.8,
+   "2022": 3.6,
+   "2021": 4.05,
+   "2020": 3.353,
+   "2019": 2.741,
+   "2018": 2.375,
+   "2017": 1.955,
+   "2016": 1.955,
+   "2015": 1.57,
+   "2014": 1.647,
+   "2013": 2.013,
+   "2012": 2.338
+  },
+  "source": "https://www.bioxbio.com/journal/MOL-INFORM"
+ },
+ "ChemMedChem": {
+  "if_latest": 3.5,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 3.5,
+   "2024": 3.4,
+   "2023": 3.6,
+   "2022": 3.4,
+   "2021": 3.54,
+   "2020": 3.466,
+   "2019": 3.124,
+   "2018": 3.016,
+   "2017": 3.009,
+   "2016": 3.225,
+   "2015": 2.98,
+   "2014": 2.968,
+   "2013": 3.046,
+   "2012": 2.835
+  },
+  "source": "https://www.bioxbio.com/journal/CHEMMEDCHEM"
+ },
+ "RSC Med Chem": {
+  "if_latest": 4.1,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "RSC 官网 pubs.rsc.org"
+ },
+ "Digital Discovery": {
+  "if_latest": 5.6,
+  "if_year": "2024",
+  "if_label": "2024",
+  "hist": {},
+  "src": "manual",
+  "source": "RSC 官方 2024 JIF 表"
+ },
+ "Nat Mach Intell": {
+  "if_latest": 29.8,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "Nature 官方期刊推荐 (科学网)"
+ },
+ "Nat Comput Sci": {
+  "if_latest": 18.3,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "JCR 2025 (journalsimpactfactors)"
+ },
+ "Mach Learn Sci Technol": {
+  "if_latest": 4.6,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "JCR 2025 (journalsimpactfactors)"
+ },
+ "Patterns": {
+  "if_latest": 10.8,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "Cell Press 官方"
+ },
+ "Chem Sci": {
+  "if_latest": 8.1,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 8.1,
+   "2024": 7.4,
+   "2023": 7.6,
+   "2022": 8.4,
+   "2021": 9.969,
+   "2020": 9.825,
+   "2019": 9.346,
+   "2018": 9.556,
+   "2017": 9.063,
+   "2016": 8.668,
+   "2015": 9.144,
+   "2014": 9.211,
+   "2013": 8.601,
+   "2012": 8.314
+  },
+  "source": "https://www.bioxbio.com/journal/CHEM-SCI"
+ },
+ "Bioinformatics": {
+  "if_latest": 5.5,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 5.5,
+   "2024": 5.4,
+   "2023": 4.4,
+   "2022": 5.8,
+   "2021": 6.931,
+   "2020": 6.937,
+   "2019": 5.61,
+   "2018": 4.531,
+   "2017": 5.481,
+   "2016": 7.307,
+   "2015": 5.766,
+   "2014": 4.981,
+   "2013": 4.621,
+   "2012": 5.323
+  },
+  "source": "https://www.bioxbio.com/journal/BIOINFORMATICS"
+ },
+ "Brief Bioinform": {
+  "if_latest": 7.3,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 7.3,
+   "2024": 7.7,
+   "2023": 6.8,
+   "2022": 9.5,
+   "2021": 13.994,
+   "2020": 11.622,
+   "2019": 8.99,
+   "2018": 9.101,
+   "2017": 6.302,
+   "2016": 5.134,
+   "2015": 8.399,
+   "2014": 9.617,
+   "2013": 5.919,
+   "2012": 5.298
+  },
+  "source": "https://www.bioxbio.com/journal/BRIEF-BIOINFORM"
+ },
+ "BMC Bioinformatics": {
+  "if_latest": 4.4,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 4.4,
+   "2024": 3.3,
+   "2023": 2.9,
+   "2022": 3.0,
+   "2021": 3.307,
+   "2020": 3.169,
+   "2019": 3.242,
+   "2018": 2.511,
+   "2017": 2.213,
+   "2016": 2.448,
+   "2015": 2.435,
+   "2014": 2.576,
+   "2013": 2.672,
+   "2012": 3.024
+  },
+  "source": "https://www.bioxbio.com/journal/BMC-BIOINFORMATICS"
+ },
+ "Comput Struct Biotechnol J": {
+  "if_latest": 4.8,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "2025 JCR (Wikipedia 引 Clarivate)"
+ },
+ "Drug Discov Today": {
+  "if_latest": 8.7,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 8.7,
+   "2024": 7.5,
+   "2023": 6.5,
+   "2021": 8.369,
+   "2020": 7.851,
+   "2019": 7.321,
+   "2018": 6.88,
+   "2017": 6.848,
+   "2016": 6.369,
+   "2015": 5.625,
+   "2014": 6.691,
+   "2013": 5.964,
+   "2012": 6.551
+  },
+  "source": "https://www.bioxbio.com/journal/DRUG-DISCOV-TODAY"
+ },
+ "Expert Opin Drug Discov": {
+  "if_latest": 7.3,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "bioxbio 2026 update / ooir WoS 2025"
+ },
+ "Future Med Chem": {
+  "if_latest": 3.3,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 3.3,
+   "2024": 3.4,
+   "2023": 3.2,
+   "2022": 4.2,
+   "2021": 4.767,
+   "2020": 3.808,
+   "2019": 3.607,
+   "2018": 3.617,
+   "2017": 3.969,
+   "2016": 3.556,
+   "2015": 3.345,
+   "2014": 3.744,
+   "2013": 4.0,
+   "2012": 3.31
+  },
+  "source": "https://www.bioxbio.com/journal/FUTURE-MED-CHEM"
+ },
+ "Nat Commun": {
+  "if_latest": 18.1,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 18.1,
+   "2024": 15.7,
+   "2023": 14.7,
+   "2022": 16.6,
+   "2021": 17.694,
+   "2020": 14.919,
+   "2019": 12.121,
+   "2018": 11.878,
+   "2017": 12.353,
+   "2016": 12.124,
+   "2015": 11.329,
+   "2014": 11.47,
+   "2013": 10.742,
+   "2012": 10.015
+  },
+  "source": "https://www.bioxbio.com/journal/NAT-COMMUN"
+ },
+ "Nat Biotechnol": {
+  "if_latest": 44.5,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 44.5,
+   "2024": 41.7,
+   "2023": 33.1,
+   "2022": 46.9,
+   "2021": 68.164,
+   "2020": 54.908,
+   "2019": 36.558,
+   "2018": 31.864,
+   "2017": 35.724,
+   "2016": 41.667,
+   "2015": 43.113,
+   "2014": 41.514,
+   "2013": 39.08,
+   "2012": 32.438
+  },
+  "source": "https://www.bioxbio.com/journal/NAT-BIOTECHNOL"
+ },
+ "Nat Methods": {
+  "if_latest": 28.3,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 28.3,
+   "2024": 32.1,
+   "2023": 36.1,
+   "2022": 48.0,
+   "2021": 47.99,
+   "2020": 28.547,
+   "2019": 30.822,
+   "2018": 28.467,
+   "2017": 26.919,
+   "2016": 25.062,
+   "2015": 25.328,
+   "2014": 32.072,
+   "2013": 25.953,
+   "2012": 23.565
+  },
+  "source": "https://www.bioxbio.com/journal/NAT-METHODS"
+ },
+ "Sci Adv": {
+  "if_latest": 13.9,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "2025 JCR (科学网/美捷登 + manusights)"
+ },
+ "PNAS": {
+  "if_latest": 9.5,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "2025 JCR (科学网/美捷登 + manusights)"
+ },
+ "JACS": {
+  "if_latest": 16.6,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 16.6,
+   "2024": 15.6,
+   "2023": 14.4,
+   "2022": 15.0,
+   "2021": 16.383,
+   "2020": 15.419,
+   "2019": 14.612,
+   "2018": 14.695,
+   "2017": 14.357,
+   "2016": 13.858,
+   "2015": 13.038,
+   "2014": 12.113,
+   "2013": 11.444,
+   "2012": 10.677
+  },
+  "source": "https://www.bioxbio.com/journal/J-AM-CHEM-SOC"
+ },
+ "Angew Chem": {
+  "if_latest": 17.6,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 17.6,
+   "2024": 16.9,
+   "2023": 16.1,
+   "2022": 16.6,
+   "2021": 16.823,
+   "2020": 15.336,
+   "2019": 12.959,
+   "2018": 12.257,
+   "2017": 12.102,
+   "2016": 11.994,
+   "2015": 11.709,
+   "2014": 11.261,
+   "2013": 11.336,
+   "2012": 13.734
+  },
+  "source": "https://www.bioxbio.com/journal/ANGEW-CHEM-INT-EDIT"
+ },
+ "ACS Cent Sci": {
+  "if_latest": 11.1,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "JCR 2025, 2026-06-17 发布 (journalmetrics)"
+ },
+ "J Phys Chem B": {
+  "if_latest": 3.2,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 3.2,
+   "2024": 2.9,
+   "2023": 2.8,
+   "2022": 3.3,
+   "2021": 3.466,
+   "2020": 2.991,
+   "2019": 2.857,
+   "2018": 2.923,
+   "2017": 3.146,
+   "2016": 3.177,
+   "2015": 3.187,
+   "2014": 3.302,
+   "2013": 3.377,
+   "2012": 3.607
+  },
+  "source": "https://www.bioxbio.com/journal/J-PHYS-CHEM-B"
+ },
+ "WIREs Comput Mol Sci": {
+  "if_latest": 10.9,
+  "if_year": "2025",
+  "if_label": "2025",
+  "hist": {},
+  "src": "manual",
+  "source": "Wiley 官网 Journal Metrics"
+ },
+ "J Chem Phys": {
+  "if_latest": 3.7,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 3.7,
+   "2024": 3.1,
+   "2023": 3.1,
+   "2022": 4.4,
+   "2021": 4.304,
+   "2020": 3.488,
+   "2019": 2.991,
+   "2018": 2.997,
+   "2017": 2.843,
+   "2016": 2.965,
+   "2015": 2.894,
+   "2014": 2.952,
+   "2013": 3.122,
+   "2012": 3.164
+  },
+  "source": "https://www.bioxbio.com/journal/J-CHEM-PHYS"
+ },
+ "Comput Biol Chem": {
+  "if_latest": 3.4,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 3.4,
+   "2024": 3.1,
+   "2023": 2.6,
+   "2022": 3.1,
+   "2021": 3.737
+  },
+  "source": "https://www.bioxbio.com/journal/COMPUT-BIOL-CHEM"
+ },
+ "J Mol Graph Model": {
+  "if_latest": 3.1,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 3.1
+  },
+  "source": "https://www.bioxbio.com/journal/J-MOL-GRAPH-MODEL"
+ },
+ "Chem Biol Drug Des": {
+  "if_latest": 3.3,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 3.3
+  },
+  "source": "https://www.bioxbio.com/journal/CHEM-BIOL-DRUG-DES"
+ },
+ "SAR QSAR Environ Res": {
+  "if_latest": 2.8,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 2.8
+  },
+  "source": "https://www.bioxbio.com/journal/SAR-QSAR-ENVIRON-RES"
+ },
+ "Bioinform Adv": {
+  "if_latest": 2.6,
+  "if_year": "2025",
+  "if_label": "2025 (2026 update)",
+  "hist": {
+   "2025": 2.6
+  },
+  "source": "JCR 2025 / enterscholar 核实"
+ }
+}

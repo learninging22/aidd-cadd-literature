@@ -1,0 +1,11 @@
+# 运行时产物不进仓库（由 Actions 缓存 / Pages 制品承载，保持仓库轻量）
+__pycache__/
+*.pyc
+.DS_Store
+
+data/papers.json
+data/seen.json
+data/config.json
+dashboard/
+outbox/
+*.log

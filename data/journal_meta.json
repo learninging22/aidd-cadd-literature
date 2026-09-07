@@ -1,0 +1,423 @@
+{
+ "J Med Chem": {
+  "title": "Journal of medicinal chemistry",
+  "issn": "0022-2623",
+  "abbr": "J Med Chem",
+  "core": true,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"Journal of medicinal chemistry\"",
+   "ISSN:\"0022-2623\""
+  ]
+ },
+ "J Chem Inf Model": {
+  "title": "Journal of chemical information and modeling",
+  "issn": "1549-9596",
+  "abbr": "J Chem Inf Model",
+  "core": true,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"Journal of chemical information and modeling\"",
+   "ISSN:\"1549-9596\""
+  ]
+ },
+ "Eur J Med Chem": {
+  "title": "European journal of medicinal chemistry",
+  "issn": "0223-5234",
+  "abbr": "Eur J Med Chem",
+  "core": true,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"European journal of medicinal chemistry\"",
+   "ISSN:\"0223-5234\""
+  ]
+ },
+ "J Chem Theory Comput": {
+  "title": "Journal of chemical theory and computation",
+  "issn": "1549-9618",
+  "abbr": "J Chem Theory Comput",
+  "core": true,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"Journal of chemical theory and computation\"",
+   "ISSN:\"1549-9618\""
+  ]
+ },
+ "J Comput Aided Mol Des": {
+  "title": "Journal of computer-aided molecular design",
+  "issn": "0920-654X",
+  "abbr": "J Comput Aided Mol Des",
+  "core": true,
+  "min_days": 30,
+  "terms": [
+   "JOURNAL:\"Journal of computer-aided molecular design\"",
+   "ISSN:\"1573-4951\""
+  ]
+ },
+ "J Cheminform": {
+  "title": "Journal of cheminformatics",
+  "issn": "1758-2946",
+  "abbr": "J Cheminform",
+  "core": true,
+  "min_days": 60,
+  "terms": [
+   "JOURNAL:\"Journal of cheminformatics\"",
+   "JOURNAL:\"J Cheminform\"",
+   "ISSN:\"1758-2946\""
+  ]
+ },
+ "Mol Inform": {
+  "title": "Molecular informatics",
+  "issn": "1868-1743",
+  "abbr": "Mol Inform",
+  "core": true,
+  "min_days": 60,
+  "terms": [
+   "JOURNAL:\"Molecular informatics\"",
+   "ISSN:\"1868-1751\""
+  ]
+ },
+ "ChemMedChem": {
+  "title": "ChemMedChem",
+  "issn": "1860-7179",
+  "abbr": "ChemMedChem",
+  "core": true,
+  "min_days": 14,
+  "terms": [
+   "JOURNAL:\"ChemMedChem\"",
+   "ISSN:\"1860-7187\""
+  ]
+ },
+ "RSC Med Chem": {
+  "title": "RSC medicinal chemistry",
+  "issn": "2632-8682",
+  "abbr": "RSC Med Chem",
+  "core": true,
+  "min_days": 21,
+  "terms": [
+   "JOURNAL:\"RSC medicinal chemistry\"",
+   "ISSN:\"2632-8682\""
+  ]
+ },
+ "Digital Discovery": {
+  "title": "Digital discovery",
+  "issn": "2635-098X",
+  "abbr": "Digit Discov",
+  "core": true,
+  "min_days": 120,
+  "terms": [
+   "JOURNAL:\"Digital discovery\"",
+   "ISSN:\"2635-098X\""
+  ]
+ },
+ "Nat Mach Intell": {
+  "title": "Nature machine intelligence",
+  "issn": "2522-5839",
+  "abbr": "Nat Mach Intell",
+  "core": true,
+  "min_days": 150,
+  "terms": [
+   "JOURNAL:\"Nature machine intelligence\"",
+   "ISSN:\"2522-5839\""
+  ]
+ },
+ "Nat Comput Sci": {
+  "title": "Nature computational science",
+  "issn": "2662-8457",
+  "abbr": "Nat Comput Sci",
+  "core": true,
+  "min_days": 30,
+  "terms": [
+   "JOURNAL:\"Nature computational science\"",
+   "ISSN:\"2662-8457\""
+  ]
+ },
+ "Mach Learn Sci Technol": {
+  "title": "Machine learning: science and technology",
+  "issn": "2632-2153",
+  "abbr": "Mach Learn Sci Technol",
+  "core": true,
+  "min_days": 180,
+  "terms": [
+   "JOURNAL:\"Machine learning: science and technology\"",
+   "ISSN:\"2632-2153\""
+  ]
+ },
+ "Patterns": {
+  "title": "Patterns (New York, N.Y.)",
+  "issn": "2666-3899",
+  "abbr": "Patterns (N Y)",
+  "core": true,
+  "min_days": 45,
+  "terms": [
+   "JOURNAL:\"Patterns (New York, N.Y.)\"",
+   "JOURNAL:\"Patterns\"",
+   "ISSN:\"2666-3899\""
+  ]
+ },
+ "Chem Sci": {
+  "title": "Chemical science",
+  "issn": "2041-6520",
+  "abbr": "Chem Sci",
+  "core": false,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"Chemical science\"",
+   "ISSN:\"2041-6539\""
+  ]
+ },
+ "Bioinformatics": {
+  "title": "Bioinformatics (Oxford, England)",
+  "issn": "1367-4803",
+  "abbr": "Bioinformatics",
+  "core": true,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"Bioinformatics\"",
+   "ISSN:\"1367-4811\""
+  ]
+ },
+ "Brief Bioinform": {
+  "title": "Briefings in bioinformatics",
+  "issn": "1467-5463",
+  "abbr": "Brief Bioinform",
+  "core": true,
+  "min_days": 14,
+  "terms": [
+   "JOURNAL:\"Briefings in bioinformatics\"",
+   "ISSN:\"1477-4054\""
+  ]
+ },
+ "BMC Bioinformatics": {
+  "title": "BMC bioinformatics",
+  "issn": "1471-2105",
+  "abbr": "BMC Bioinformatics",
+  "core": true,
+  "min_days": 60,
+  "terms": [
+   "JOURNAL:\"BMC bioinformatics\"",
+   "ISSN:\"1471-2105\""
+  ]
+ },
+ "Bioinform Adv": {
+  "title": "Bioinformatics advances",
+  "issn": "2635-0041",
+  "abbr": "Bioinform Adv",
+  "core": true,
+  "min_days": 21,
+  "terms": [
+   "JOURNAL:\"Bioinformatics advances\"",
+   "ISSN:\"2635-0041\""
+  ]
+ },
+ "Comput Struct Biotechnol J": {
+  "title": "Computational and structural biotechnology journal",
+  "issn": "2001-0370",
+  "abbr": "Comput Struct Biotechnol J",
+  "core": true,
+  "min_days": 14,
+  "terms": [
+   "JOURNAL:\"Computational and structural biotechnology journal\"",
+   "ISSN:\"2001-0370\""
+  ]
+ },
+ "Drug Discov Today": {
+  "title": "Drug discovery today",
+  "issn": "1359-6446",
+  "abbr": "Drug Discov Today",
+  "core": true,
+  "min_days": 14,
+  "terms": [
+   "JOURNAL:\"Drug discovery today\"",
+   "ISSN:\"1878-5832\""
+  ]
+ },
+ "Expert Opin Drug Discov": {
+  "title": "Expert opinion on drug discovery",
+  "issn": "1746-0441",
+  "abbr": "Expert Opin Drug Discov",
+  "core": true,
+  "min_days": 45,
+  "terms": [
+   "JOURNAL:\"Expert opinion on drug discovery\"",
+   "ISSN:\"1746-045X\""
+  ]
+ },
+ "Future Med Chem": {
+  "title": "Future medicinal chemistry",
+  "issn": "1756-8919",
+  "abbr": "Future Med Chem",
+  "core": true,
+  "min_days": 30,
+  "terms": [
+   "JOURNAL:\"Future medicinal chemistry\"",
+   "ISSN:\"1756-8927\""
+  ]
+ },
+ "Comput Biol Chem": {
+  "title": "Computational biology and chemistry",
+  "issn": "1476-9271",
+  "abbr": "Comput Biol Chem",
+  "core": true,
+  "min_days": 14,
+  "terms": [
+   "JOURNAL:\"Computational biology and chemistry\"",
+   "ISSN:\"1476-9271\""
+  ]
+ },
+ "J Mol Graph Model": {
+  "title": "Journal of molecular graphics & modelling",
+  "issn": "1093-3263",
+  "abbr": "J Mol Graph Model",
+  "core": true,
+  "min_days": 14,
+  "terms": [
+   "JOURNAL:\"Journal of molecular graphics & modelling\"",
+   "ISSN:\"1093-3263\""
+  ]
+ },
+ "Chem Biol Drug Des": {
+  "title": "Chemical biology & drug design",
+  "issn": "1747-0277",
+  "abbr": "Chem Biol Drug Des",
+  "core": true,
+  "min_days": 30,
+  "terms": [
+   "JOURNAL:\"Chemical biology & drug design\"",
+   "ISSN:\"1747-0277\""
+  ]
+ },
+ "SAR QSAR Environ Res": {
+  "title": "SAR and QSAR in environmental research",
+  "issn": "1062-936X",
+  "abbr": "SAR QSAR Environ Res",
+  "core": true,
+  "min_days": 180,
+  "terms": [
+   "JOURNAL:\"SAR and QSAR in environmental research\"",
+   "ISSN:\"1062-936X\""
+  ]
+ },
+ "Nat Commun": {
+  "title": "Nature communications",
+  "issn": "2041-1723",
+  "abbr": "Nat Commun",
+  "core": false,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"Nature communications\"",
+   "ISSN:\"2041-1723\""
+  ]
+ },
+ "Nat Biotechnol": {
+  "title": "Nature biotechnology",
+  "issn": "1087-0156",
+  "abbr": "Nat Biotechnol",
+  "core": false,
+  "min_days": 14,
+  "terms": [
+   "JOURNAL:\"Nature biotechnology\"",
+   "ISSN:\"1546-1696\""
+  ]
+ },
+ "Nat Methods": {
+  "title": "Nature methods",
+  "issn": "1548-7091",
+  "abbr": "Nat Methods",
+  "core": false,
+  "min_days": 14,
+  "terms": [
+   "JOURNAL:\"Nature methods\"",
+   "ISSN:\"1548-7105\""
+  ]
+ },
+ "Sci Adv": {
+  "title": "Science advances",
+  "issn": "2375-2548",
+  "abbr": "Sci Adv",
+  "core": false,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"Science advances\"",
+   "ISSN:\"2375-2548\""
+  ]
+ },
+ "PNAS": {
+  "title": "Proceedings of the National Academy of Sciences of the United States of America",
+  "issn": "0027-8424",
+  "abbr": "Proc Natl Acad Sci U S A",
+  "core": false,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"Proceedings of the National Academy of Sciences of the United States of America\"",
+   "ISSN:\"0027-8424\""
+  ]
+ },
+ "JACS": {
+  "title": "Journal of the American Chemical Society",
+  "issn": "0002-7863",
+  "abbr": "J Am Chem Soc",
+  "core": false,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"Journal of the American Chemical Society\"",
+   "ISSN:\"1520-5126\""
+  ]
+ },
+ "Angew Chem": {
+  "title": "Angewandte Chemie (International ed. in English)",
+  "issn": "1433-7851",
+  "abbr": "Angew Chem Int Ed Engl",
+  "core": false,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"Angewandte Chemie (International ed. in English)\"",
+   "ISSN:\"1521-3773\""
+  ]
+ },
+ "ACS Cent Sci": {
+  "title": "ACS central science",
+  "issn": "2374-7943",
+  "abbr": "ACS Cent Sci",
+  "core": false,
+  "min_days": 21,
+  "terms": [
+   "JOURNAL:\"ACS central science\"",
+   "ISSN:\"2374-7951\""
+  ]
+ },
+ "J Phys Chem B": {
+  "title": "The journal of physical chemistry. B",
+  "issn": "1520-6106",
+  "abbr": "J Phys Chem B",
+  "core": false,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"The journal of physical chemistry. B\"",
+   "ISSN:\"1520-5207\""
+  ]
+ },
+ "WIREs Comput Mol Sci": {
+  "title": "Wiley interdisciplinary reviews. Computational molecular science",
+  "issn": "1759-0876",
+  "abbr": "Wiley Interdiscip Rev Comput Mol Sci",
+  "core": false,
+  "min_days": 365,
+  "terms": [
+   "JOURNAL:\"Wiley interdisciplinary reviews. Computational molecular science\"",
+   "ISSN:\"1759-0884\"",
+   "ISSN:\"1759-0876\""
+  ]
+ },
+ "J Chem Phys": {
+  "title": "The Journal of chemical physics",
+  "issn": "0021-9606",
+  "abbr": "J Chem Phys",
+  "core": false,
+  "min_days": 7,
+  "terms": [
+   "JOURNAL:\"The Journal of chemical physics\"",
+   "ISSN:\"1089-7690\""
+  ]
+ }
+}
