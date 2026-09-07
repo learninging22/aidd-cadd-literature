@@ -114,18 +114,24 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # 邮件为可选项: 未配置 EMAIL_TO 时整步跳过, 不会失败
+      - name: 取当前日期(北京时间)
+        id: today
+        run: echo "d=$(TZ=Asia/Shanghai date +%F)" >> $GITHUB_OUTPUT
+
+      # 邮件为可选项: EMAIL_TO 与 SMTP 凭据必须齐全才发送, 缺任一则整步跳过(不会让工作流变红)
       - name: 邮件推送日报
-        if: env.EMAIL_TO != ''
+        if: env.EMAIL_TO != '' && env.MAIL_PASSWORD != ''
         env:
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
           server_port: ${{ secrets.SMTP_PORT }}
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: AIDD/CADD 文献日报
+          secure: true
+          subject: AIDD/CADD 文献日报 ${{ steps.today.outputs.d }}
           to: ${{ secrets.EMAIL_TO }}
           from: ${{ secrets.MAIL_USERNAME }}
           body: file://outbox/email_digest.md
