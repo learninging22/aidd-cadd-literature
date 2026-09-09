@@ -393,7 +393,8 @@ def refresh_tags(db):
 
 def build_html(db, new_keys):
     refresh_tags(db)  # 保证改了关键词后 --rebuild 也能刷新标签
-    db_sorted = sorted(db, key=lambda x: (x.get("index_date") or "", x.get("score", 0)), reverse=True)
+    # 看板默认按发表日期倒序(最新在前); 少数记录缺 firstPublicationDate, 退回入库日期
+    db_sorted = sorted(db, key=lambda x: (x.get("date") or x.get("index_date") or "", x.get("score", 0)), reverse=True)
     # 看板只注入摘要预览(前 ABS_PREVIEW 字符), 完整摘要在用户点"展开全文"时
     # 按需从 Europe PMC 拉取。3641 篇全量摘要约 5MB, 会让网页加载过慢。
     slim = []
@@ -498,7 +499,8 @@ footer{text-align:center;color:#98a1ac;font-size:12px;margin-top:26px}
 <select id="jsel"></select>
 <select id="tsel"><option value="">全部主题</option></select>
 <select id="ssel">
-<option value="date">排序: 入库时间</option><option value="if">排序: 影响因子</option>
+<option value="pub" selected>排序: 发表时间（最新在前）</option><option value="date">排序: 入库时间</option>
+<option value="if">排序: 影响因子</option>
 <option value="score">排序: 相关度</option>
 </select>
 <select id="dsel">
@@ -509,6 +511,7 @@ footer{text-align:center;color:#98a1ac;font-size:12px;margin-top:26px}
 </div>
 <div class="chips" id="chips"></div>
 <div id="list"></div>
+<div id="more"></div>
 <footer id="foot"></footer>
 </div>
 <script>
@@ -523,6 +526,9 @@ const $ = id => document.getElementById(id);
 let fTopic = "", MAP = new Map();
 
 function daysAgo(s){ if(!s) return 9999; const d = new Date(s); return isNaN(d) ? 9999 : (Date.now()-d.getTime())/86400000; }
+
+// 排序用的发表日期: 少数记录缺 firstPublicationDate, 退回入库日期, 避免空值全堆到末尾
+function pubKey(p){ return p.date || p.index_date || ""; }
 
 function statsView(){
   const ps = DATA.papers || [];
@@ -630,6 +636,11 @@ function render(){
   if(sort === "if") ps.sort((a,b)=> ifVal(b.journal_disp) - ifVal(a.journal_disp) ||
                                     (b.index_date||"").localeCompare(a.index_date||""));
   else if(sort === "score") ps.sort((a,b)=> (b.score||0) - (a.score||0));
+  else if(sort === "date") ps.sort((a,b)=> (b.index_date||"").localeCompare(a.index_date||"") ||
+                                           pubKey(b).localeCompare(pubKey(a)));
+  else ps.sort((a,b)=> pubKey(b).localeCompare(pubKey(a)) ||      // 默认: 发表时间最新在前
+                                (b.index_date||"").localeCompare(a.index_date||"") ||
+                                (b.score||0)-(a.score||0));
   // 分页渲染: 一次只挂 PAGE_SIZE 张卡片, 避免上千条 DOM 拖垮页面
   if(shown > ps.length) shown = ps.length;
   $('list').innerHTML = ps.slice(0, shown).map(cardHTML).join('');
@@ -741,9 +752,18 @@ async function syncOnline(days){
         MAP.set(it.key, it);
       }
     }
-    DATA.papers.sort((a,b)=> (b.index_date || "").localeCompare(a.index_date || "") || (b.score||0)-(a.score||0));
+    DATA.papers.sort((a,b)=> pubKey(b).localeCompare(pubKey(a)) ||      // 发表时间最新在前
+                              (b.index_date||"").localeCompare(a.index_date||"") ||
+                              (b.score||0)-(a.score||0));
     DATA.generated = new Date().toLocaleString("zh-CN", {hour12:false});
-    statsView(); distView(); render();
+    // 渲染异常 ≠ 同步失败(数据此时已并入 DATA), 单独提示, 避免误导成网络问题
+    try{ statsView(); distView(); render(); }
+    catch(re){
+      info.textContent = "已在线获取 " + added + " 篇，但列表刷新失败：" + re.message;
+      console.error(re);
+      btn.disabled = false; btn.textContent = "在线同步最新";
+      return;
+    }
     info.textContent = added > 0
       ? "已同步至最新 · 本次在线新增 " + added + " 篇 · " + DATA.generated
       : "已是最新，无新增文献 · 检查于 " + DATA.generated;

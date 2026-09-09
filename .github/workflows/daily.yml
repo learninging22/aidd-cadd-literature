@@ -3,6 +3,8 @@ name: AIDD/CADD 文献每日更新
 on:
   schedule:
     - cron: '30 1 * * *'          # UTC 01:30 = 北京时间 09:30
+  push:                           # 推代码后立即重建, 避免"改了 fetch_lit.py 线上却还是旧页面"
+    branches: [main]
   workflow_dispatch:              # 允许在网页手动点一次
     inputs:
       days:

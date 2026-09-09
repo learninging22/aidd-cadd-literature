@@ -9,3 +9,7 @@ data/config.json
 dashboard/
 outbox/
 *.log
+
+# 本地辅助脚本(调用 GitHub API 推送/写 Secrets), 不随仓库发布
+_push_file.py
+_set_secrets.py
