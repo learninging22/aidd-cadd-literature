@@ -41,9 +41,17 @@ ABS_PREVIEW = 700
 # 核心刊: 全量收录不过滤; 综合刊: 必须命中 >=2 个 AIDD/CADD 关键词才收录
 # 保底窗口: 该刊出刊频率低, 若按常规窗口检索为 0 篇, 自动扩大到该天数重试。
 #           这是"保证每刊都能取到文献"的关键——季刊/月刊在 3 天窗口内必然为 0。
+#
+# 自适应扩窗阶梯: 保底窗口仍未命中时, 按此阶梯逐级放大直到命中。
+# 存在必要性——保底值是按"出刊频率"估的, 但 Europe PMC 的入库节奏与出刊频率
+# 并不一致: 有的刊按批入库(实测 JMC 约 15 天一批、单次数十篇), 3 天窗口恒为 0,
+# 7 天保底同样够不着, 会被整个漏掉。阶梯兜底可保证任何入库节奏的刊都不落空。
+FALLBACK_LADDER = (7, 14, 30, 60, 90, 180, 365)
 JOURNALS = [
     # ===== 药物化学 & 分子模拟 核心刊 =====
-    ("J Med Chem", ["Journal of medicinal chemistry"], ["0022-2623"], True, 7),
+    # JMC 在 Europe PMC 按批入库(实测约 16-18 天一批, 单批数十篇), 保底需覆盖该周期,
+    # 否则 3 天窗口恒为 0、7 天保底又够不着, 会被整个漏掉。
+    ("J Med Chem", ["Journal of medicinal chemistry"], ["0022-2623"], True, 21),
     ("J Chem Inf Model", ["Journal of chemical information and modeling"], ["1549-9596"], True, 7),
     ("Eur J Med Chem", ["European journal of medicinal chemistry"], ["0223-5234"], True, 7),
     ("J Chem Theory Comput", ["Journal of chemical theory and computation"], ["1549-9618"], True, 7),
@@ -306,9 +314,13 @@ def probe_journals():
 def fetch_journal(disp, names, issns, date_from, date_to, min_days=0):
     """按刊单独检索(带分页), 返回该刊全部记录; 失败返回 None
 
-    min_days > 0 时启用自适应窗口: 若按常规窗口检索为 0 篇, 自动向前扩窗到
-    min_days 天重试。低产刊(月刊/季刊)在 3 天窗口内必然为 0, 靠这个兜底保证
-    任何时刻每刊都能取到文献。"""
+    自适应阶梯扩窗: 常规窗口为 0 篇时, 逐级放大窗口重试直到命中。
+
+    这是"保证每刊不落空"的关键。各刊在 Europe PMC 的入库节奏差异极大:
+    有的每天入库(如 EJMC), 有的按批入库(如 JMC 约 15 天一批, 单次入库数十篇)。
+    单一固定保底窗口无法同时适配——保底设小了, 批量入库的刊会长期为 0;
+    保底设大了, 又会一次性拖入过多旧文。故改为阶梯: 先试该刊的经验保底天数
+    (min_days), 未命中再逐级放大, 首次命中即停, 兼顾覆盖与时效。"""
     terms = ['JOURNAL:"%s"' % n for n in names] + ['ISSN:"%s"' % i for i in issns]
 
     def _run(d_from):
@@ -327,17 +339,35 @@ def fetch_journal(disp, names, issns, date_from, date_to, min_days=0):
         return out
 
     recs = _run(date_from)
-    # 自适应扩窗: 常规窗口空手而归时, 按该刊的保底窗口再抓一次
-    if min_days and (not recs) and date_to and date_from:
-        try:
-            d0 = datetime.date.fromisoformat(date_to)
-            span = (d0 - datetime.date.fromisoformat(date_from)).days
-        except Exception:
-            span = min_days
-        if span < min_days:
-            wider = (d0 - datetime.timedelta(days=min_days)).isoformat()
-            log("  %-28s 常规窗口 0 篇 -> 扩窗到 %d 天重试" % (disp, min_days))
-            recs = _run(wider)
+    if recs:
+        return recs
+
+    if not (date_to and date_from):
+        return recs
+
+    try:
+        d0 = datetime.date.fromisoformat(date_to)
+        span0 = max((d0 - datetime.date.fromisoformat(date_from)).days, 0)
+    except Exception:
+        return recs
+
+    # 经验保底优先(命中率最高), 其后按阶梯逐级放大
+    cands = []
+    if min_days and min_days > span0:
+        cands.append(min_days)
+    cands.extend(s for s in FALLBACK_LADDER if s > span0 and s != min_days)
+
+    for span in cands:
+        log("  %-28s 常规窗口 0 篇 -> 扩窗到 %d 天重试" % (disp, span))
+        recs = _run((d0 - datetime.timedelta(days=span)).isoformat())
+        if recs:
+            break
+        time.sleep(0.2)
+
+    if not recs:
+        # 阶梯走完仍为空: 多半是检索式失效(JOURNAL/ISSN 名变更), 而非该刊真的没发文
+        log("  %-28s !! 扩窗至 %d 天仍 0 篇, 请核对检索式: %s"
+            % (disp, cands[-1] if cands else span0, " | ".join(names + issns)))
     return recs
 
 
