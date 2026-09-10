@@ -533,9 +533,13 @@ footer{text-align:center;color:#98a1ac;font-size:12px;margin-top:26px}
 <option value="if">排序: 影响因子</option>
 <option value="score">排序: 相关度</option>
 </select>
+<!-- 默认 30 天: 该筛选按入库时间(index_date)过滤, 而各刊入库节奏差异极大。
+     JMC 为批量入库(约 16-18 天一批), 若默认 3 天, 其上批文献会整个被筛掉,
+     看板上表现为"该刊始终无文献"。30 天可覆盖绝大多数刊的入库周期。 -->
 <select id="dsel">
-<option value="1">最近 1 天</option><option value="3" selected>最近 3 天</option>
-<option value="7">最近 7 天</option><option value="30">最近 30 天</option><option value="0">全部</option>
+<option value="1">最近 1 天</option><option value="3">最近 3 天</option>
+<option value="7">最近 7 天</option><option value="30" selected>最近 30 天</option>
+<option value="90">最近 90 天</option><option value="0">全部</option>
 </select>
 <label style="font-size:13px;color:#5a636e"><input type="checkbox" id="newonly" style="margin-right:5px">只看本次新增</label>
 </div>
